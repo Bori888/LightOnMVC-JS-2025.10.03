@@ -29,27 +29,27 @@ header p {
 
 /* Játéktér */
 .jatekter {
-    display: inline-block;
-    margin-top: 40px;
-    padding: 15px;
-    background-color: #fdf3ec;
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 70%; /* csak a középen lévő rész */
+    margin: 40px auto; /* középre */
+    padding: 20px;
+    background-color: #fdf3ec; /* világos fehér háttér */
     border: 3px solid #873600;
-    border-radius: 12px;
+    border-radius: 20px;
     box-shadow: 0 6px 10px rgba(0,0,0,0.25);
-}
-
-.sor {
-    display: flex;
 }
 
 /* Lámpák */
 .lampa {
-    width: 70px;
-    height: 70px;
-    margin: 6px;
-    border-radius: 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* kör alak */
     cursor: pointer;
-    background-color: #7b3f00; /* alap: barna, ki van kapcsolva */
+    background-color: #5a2a1e; /* alap: barna */
     transition: background-color 0.3s, transform 0.2s;
     box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
@@ -59,7 +59,7 @@ header p {
 }
 
 .lampa.on {
-    background-color: #ffcc66; /* felkapcsolt: sárgás fény */
+    background-color: #d97706; /* bekapcsolt: narancs */
     box-shadow: 0 0 15px 5px rgba(255, 180, 50, 0.7);
 }
 
@@ -70,24 +70,4 @@ footer {
     background-color: #a04000;
     color: #fff8f0;
     font-size: 1em;
-}
-.jatekter {
-    display: grid;
-    grid-template-columns: repeat(3, 80px); /* 3 oszlop, fix mérettel */
-    gap: 10px;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.lampa {
-    width: 80px;
-    height: 80px;
-    background-color: #5a2a1e; /* barna */
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.lampa.on {
-    background-color: #d97706; /* világos narancs, "bekapcsolt" */
 }
