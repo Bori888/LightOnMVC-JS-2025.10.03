@@ -99,6 +99,8 @@ project-root/
 │   ├── LampakView.js
 │   └── JatekterView.js
 └── stilus.css               # Letisztult, reszponzív stílus
+
+```plaintext
 # Változtatások
 
 Ez a dokumentáció tartalmazza a **Light-On játék** legújabb változtatásait, a fájlstruktúrát és a frissített játékmenetet.
