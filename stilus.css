@@ -71,3 +71,20 @@ footer {
     color: #fff8f0;
     font-size: 1em;
 }
+#ujrainditas {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #a04000;
+    color: #fff8f0;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+#ujrainditas:hover {
+    transform: scale(1.05);
+    background-color: #d97706;
+}

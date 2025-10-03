@@ -1,6 +1,5 @@
-import LampakModell from "../modell/LampakModell.js";   // modell mappa
-import JatekterView from "../view/JatekterView.js";      // view mappa
-
+import LampakModell from "../modell/LampakModell.js";
+import JatekterView from "../view/JatekterView.js";
 
 export default class JatekterController {
     #modell;
@@ -11,20 +10,27 @@ export default class JatekterController {
         this.#view = new JatekterView(
             szuloElem,
             this.#modell.getLampak(),
-            this.lampaKattintas.bind(this) // eseménykezelő a kattintásokra
+            this.lampaKattintas.bind(this)
         );
+
+        // Új játék gomb
+        const ujGomb = document.getElementById("ujrainditas");
+        ujGomb.addEventListener("click", () => {
+            this.ujJatek();
+        });
     }
 
     lampaKattintas(i, j) {
-        // modell állapot váltás
         this.#modell.kapcsol(i, j);
-
-        // nézet frissítése
         this.#view.frissit(this.#modell.getLampak());
 
-        // győzelem ellenőrzése
         if (this.#modell.nyertE()) {
             alert("🎉 Nyertél! 🎉");
         }
+    }
+
+    ujJatek() {
+        this.#modell.lampakListaFeltolt(); // új állapot
+        this.#view.frissit(this.#modell.getLampak());
     }
 }

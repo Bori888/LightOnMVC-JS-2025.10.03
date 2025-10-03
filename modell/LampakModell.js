@@ -38,4 +38,15 @@ export default class LampakModell {
             sor.every(lampa => lampa === false)
         );
     }
+    lampakListaFeltolt() {
+    this.#lampakLista = [];
+    for (let i = 0; i < this.#meret; i++) {
+        let sor = [];
+        for (let j = 0; j < this.#meret; j++) {
+            sor.push(Math.random() < 0.5); // 50% esély, hogy felkapcsolva legyen
+        }
+        this.#lampakLista.push(sor);
+    }
+}
+
 }
