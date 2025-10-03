@@ -103,3 +103,53 @@ Ez a projekt egy egyszerű **"Light-On" logikai játék**, amely JavaScript nyel
 └── controllers/            # Az irányító réteg (Controller - C az MVC-ből)
     └── JatekterController.js  # A játék logikáját kezelő vezérlő
 
+# Változtatások
+
+Ez a dokumentáció tartalmazza a **Light-On játék** legújabb változtatásait, a fájlstruktúrát és a frissített játékmenetet.
+
+---
+
+## 🆕 Új változtatások
+
+1. **Háttér:**
+   - Árnyalatos barna-narancs árnyalatok (`linear-gradient`)
+   - Nem ismétlődő (`background-repeat: no-repeat`)
+   - Fix pozíció görgetéskor (`background-attachment: fixed`)
+
+2. **Játéktér:**
+   - Teljesen középre rendezve
+   - Fehér rész csak 2 cm körülveszi a lámpákat
+   - Reszponzív, mobilbarát kialakítás
+
+3. **Lámpák:**
+   - Kör alakúak (`border-radius: 50%`)
+   - Szép hover és glow effekt, világítás ki/bekapcsolás
+   - Reszponzív méretezés kisebb képernyőre
+
+4. **Fejléc és feladat:**
+   - Cím nagyobb (`font-size: 3em`)
+   - Feladat a fejlécben (`Kattints a lámpákra! A kiválasztott és a szomszédos lámpák átváltanak.`)
+
+5. **Újraindítás gomb:**
+   - „♻️ Új játék” gomb a 9 lámpa alatt
+   - Véletlenszerű új állapotot ad minden lámpának
+
+6. **Footer:**
+   - A footer tartalmazza a nevet: **I. Bori**
+
+---
+
+## 📁 Projekt Fájl- és Mappastruktúra
+
+project-root/
+├── main.js # Az alkalmazás belépési pontja, inicializálja a játékot
+├── index.html # HTML struktúra
+├── controller/ # Kontroller réteg (C az MVC-ből)
+│ └── JatekterController.js
+├── modell/ # Modell réteg (M az MVC-ből)
+│ └── LampakModell.js
+├── view/ # Nézet réteg (V az MVC-ből)
+│ ├── LampakView.js
+│ └── JatekterView.js
+└── stilus.css # Letisztult, reszponzív stílus
+
