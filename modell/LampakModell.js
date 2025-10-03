@@ -4,16 +4,16 @@ export default class LampakModell {
     #meret = 3;
 
     constructor() {
-
         this.lampakListaFeltolt();
-
     }
+
     lampakListaFeltolt() {
         this.#lampakLista = [];
         for (let i = 0; i < this.#meret; i++) {
             let sor = [];
             for (let j = 0; j < this.#meret; j++) {
-                sor.push(true);
+                // véletlenszerű állapot: fel vagy le
+                sor.push(Math.random() < 0.5);
             }
             this.#lampakLista.push(sor);
         }
@@ -28,14 +28,14 @@ export default class LampakModell {
         iranyok.forEach(([x, y]) => {
             let ni = i + x, nj = j + y;
             if (ni >= 0 && ni < this.#meret && nj >= 0 && nj < this.#meret) {
-                this.#lampakLista[ni][nj].valt();
+                this.#lampakLista[ni][nj] = !this.#lampakLista[ni][nj];
             }
         });
     }
 
     nyertE() {
         return this.#lampakLista.every(sor =>
-            sor.every(lampa => lampa.getAllapot() === false)
+            sor.every(lampa => lampa === false)
         );
     }
 }
