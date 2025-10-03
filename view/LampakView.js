@@ -1,9 +1,22 @@
 export default class LampakView {
     #lampakView = [];
+    #szuloElem;
+    #esemenyKezelo;
 
     constructor(szuloElem, lampak, esemenyKezelo) {
+        this.#szuloElem = szuloElem;
+        this.#esemenyKezelo = esemenyKezelo;
         this.#lampakView = [];
-        szuloElem.innerHTML = "";
+
+        this.lampakMegjelenit(lampak); // külön metódus a DOM felépítésére
+    }
+
+    /** 
+     * DOM létrehozás és megjelenítés
+     */
+    lampakMegjelenit(lampak) {
+        this.#szuloElem.innerHTML = "";
+        this.#lampakView = [];
 
         lampak.forEach((sor, i) => {
             let sorView = [];
@@ -12,17 +25,21 @@ export default class LampakView {
                 div.classList.add("lampa");
                 if (allapot) div.classList.add("on");
 
+                // esemény hozzárendelése
                 div.addEventListener("click", () => {
-                    esemenyKezelo(i, j);
+                    this.#esemenyKezelo(i, j);
                 });
 
-                szuloElem.appendChild(div);
+                this.#szuloElem.appendChild(div);
                 sorView.push(div);
             });
             this.#lampakView.push(sorView);
         });
     }
 
+    /**
+     * Állapot frissítés a modell alapján
+     */
     frissit(lampak) {
         lampak.forEach((sor, i) => {
             sor.forEach((allapot, j) => {

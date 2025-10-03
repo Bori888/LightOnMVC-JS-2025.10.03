@@ -4,6 +4,7 @@ import JatekterView from "../view/JatekterView.js";
 export default class JatekterController {
     #modell;
     #view;
+    #ujGomb;
 
     constructor(szuloElem) {
         this.#modell = new LampakModell();
@@ -13,24 +14,42 @@ export default class JatekterController {
             this.lampaKattintas.bind(this)
         );
 
-        // Új játék gomb
-        const ujGomb = document.getElementById("ujrainditas");
-        ujGomb.addEventListener("click", () => {
+        this.#ujGomb = document.getElementById("ujrainditas");
+        this.#esemenyKezeles(); // külön metódusban regisztráljuk az eseményeket
+    }
+
+    /**
+     * Események hozzárendelése
+     */
+    #esemenyKezeles() {
+        this.#ujGomb.addEventListener("click", () => {
             this.ujJatek();
         });
     }
 
+    /**
+     * Lámpa kattintás esemény kezelése
+     */
     lampaKattintas(i, j) {
         this.#modell.kapcsol(i, j);
         this.#view.frissit(this.#modell.getLampak());
+        this.#nyertEllenorzes();
+    }
 
+    /**
+     * Új játék indítása
+     */
+    ujJatek() {
+        this.#modell.lampakListaFeltolt(); 
+        this.#view.frissit(this.#modell.getLampak());
+    }
+
+    /**
+     * Ellenőrzi, hogy nyert-e a játékos
+     */
+    #nyertEllenorzes() {
         if (this.#modell.nyertE()) {
             alert("🎉 Nyertél! 🎉");
         }
-    }
-
-    ujJatek() {
-        this.#modell.lampakListaFeltolt(); // új állapot
-        this.#view.frissit(this.#modell.getLampak());
     }
 }
