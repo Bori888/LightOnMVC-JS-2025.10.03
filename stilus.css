@@ -1,10 +1,16 @@
 /* Alapstílus */
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom, #6e2c00, #fbeee6);
+    background: linear-gradient(to bottom, #6e2c00, #fbeee6); /* árnyalatos, nem ismétlődő */
+    background-repeat: no-repeat; /* ne ismétlődjön */
+    background-attachment: fixed; /* marad a helyén görgetéskor */
     color: #3b1c08;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
     text-align: center;
 }
 
@@ -12,35 +18,46 @@ body {
 header {
     background-color: #a04000;
     color: #fff8f0;
-    padding: 20px;
+    padding: 30px 20px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    width: 100%;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.2em;
+    font-size: 3em; /* nagyobb cím */
     letter-spacing: 2px;
 }
 
 header p {
-    margin: 5px 0 0 0;
+    margin: 10px 0 0 0;
+    font-size: 1.2em;
     font-style: italic;
 }
 
 /* Játéktér */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
 .jatekter {
     display: grid;
     grid-template-columns: repeat(3, 80px);
     gap: 10px;
     justify-content: center;
     align-items: center;
-    width: 70%; /* csak a középen lévő rész */
-    margin: 40px auto; /* középre */
-    padding: 20px;
-    background-color: #fdf3ec; /* világos fehér háttér */
+    padding: 2cm; /* fehér rész csak a lámpák körül */
+    background-color: #ffffff;
     border: 3px solid #873600;
     border-radius: 20px;
     box-shadow: 0 6px 10px rgba(0,0,0,0.25);
+    max-width: 95%;
+    box-sizing: border-box;
 }
 
 /* Lámpák */
@@ -63,18 +80,11 @@ header p {
     box-shadow: 0 0 15px 5px rgba(255, 180, 50, 0.7);
 }
 
-/* Lábléc */
-footer {
-    margin-top: 40px;
-    padding: 15px;
-    background-color: #a04000;
-    color: #fff8f0;
-    font-size: 1em;
-}
+/* Újraindítás gomb */
 #ujrainditas {
     margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1em;
+    padding: 10px 25px;
+    font-size: 1.1em;
     background-color: #a04000;
     color: #fff8f0;
     border: none;
@@ -87,4 +97,41 @@ footer {
 #ujrainditas:hover {
     transform: scale(1.05);
     background-color: #d97706;
+}
+
+/* Lábléc */
+footer {
+    width: 100%;
+    padding: 15px;
+    background-color: #a04000;
+    color: #fff8f0;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+/* Reszponzivitás */
+@media (max-width: 500px) {
+    .jatekter {
+        grid-template-columns: repeat(3, 60px);
+        gap: 8px;
+        padding: 1.5cm;
+    }
+
+    .lampa {
+        width: 60px;
+        height: 60px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    #ujrainditas {
+        padding: 8px 20px;
+        font-size: 1em;
+    }
 }
