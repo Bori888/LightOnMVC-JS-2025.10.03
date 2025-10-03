@@ -1,4 +1,4 @@
-import JatekterController from "./controllers/JatekterController.js";
+import JatekterController from "./controller/JatekterController.js"; // controller, nem controllers
 
 document.addEventListener("DOMContentLoaded", () => {
     const szuloElem = document.querySelector(".jatekter");

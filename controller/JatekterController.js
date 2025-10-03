@@ -1,5 +1,6 @@
-import LampakModell from "../models/LampakModell.js";
-import JatekterView from "../views/JatekterView.js";
+import LampakModell from "../modell/LampakModell.js";   // modell mappa
+import JatekterView from "../view/JatekterView.js";      // view mappa
+
 
 export default class JatekterController {
     #modell;

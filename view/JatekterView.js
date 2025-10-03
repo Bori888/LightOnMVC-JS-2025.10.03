@@ -4,7 +4,8 @@ export default class JatekterView {
     #lampakView;
 
     constructor(szuloElem, lampak, esemenyKezelo) {
-        // a játéktér fő konténere
+        // teljes játéktér törlése, majd újrarajzolás
+        szuloElem.innerHTML = "";
         this.#lampakView = new LampakView(szuloElem, lampak, esemenyKezelo);
     }
 

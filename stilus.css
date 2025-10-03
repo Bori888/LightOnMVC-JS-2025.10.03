@@ -71,3 +71,23 @@ footer {
     color: #fff8f0;
     font-size: 1em;
 }
+.jatekter {
+    display: grid;
+    grid-template-columns: repeat(3, 80px); /* 3 oszlop, fix mérettel */
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.lampa {
+    width: 80px;
+    height: 80px;
+    background-color: #5a2a1e; /* barna */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.lampa.on {
+    background-color: #d97706; /* világos narancs, "bekapcsolt" */
+}

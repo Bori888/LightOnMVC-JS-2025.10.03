@@ -2,27 +2,21 @@ export default class LampakView {
     #lampakView = [];
 
     constructor(szuloElem, lampak, esemenyKezelo) {
-        szuloElem.innerHTML = "";
         this.#lampakView = [];
+        szuloElem.innerHTML = "";
 
         lampak.forEach((sor, i) => {
-            let sorElem = document.createElement("div");
-            sorElem.classList.add("sor");
-            szuloElem.appendChild(sorElem);
-
             let sorView = [];
             sor.forEach((allapot, j) => {
-                let div = document.createElement("div");
+                const div = document.createElement("div");
                 div.classList.add("lampa");
-                if (allapot) {
-                    div.classList.add("on");
-                }
-                sorElem.appendChild(div);
+                if (allapot) div.classList.add("on");
 
                 div.addEventListener("click", () => {
                     esemenyKezelo(i, j);
                 });
 
+                szuloElem.appendChild(div);
                 sorView.push(div);
             });
             this.#lampakView.push(sorView);
