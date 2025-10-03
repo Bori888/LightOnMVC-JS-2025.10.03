@@ -99,53 +99,45 @@ project-root/
 │   ├── LampakView.js
 │   └── JatekterView.js
 └── stilus.css               # Letisztult, reszponzív stílus
-Változtatások
+# Változtatások
 
-Ez a dokumentáció tartalmazza a Light-On játék legújabb változtatásait, a fájlstruktúrát és a frissített játékmenetet.
+Ez a dokumentáció tartalmazza a **Light-On játék** legújabb változtatásait, a fájlstruktúrát és a frissített játékmenetet.
 
-🆕 Új változtatások
+---
 
-Háttér:
+## 🆕 Új változtatások
 
-Árnyalatos barna-narancs árnyalatok (linear-gradient)
+### Háttér
+- Árnyalatos barna-narancs árnyalatok (`linear-gradient`)
+- Nem ismétlődő (`background-repeat: no-repeat`)
+- Fix pozíció görgetéskor (`background-attachment: fixed`)
 
-Nem ismétlődő (background-repeat: no-repeat)
+### Játéktér
+- Teljesen középre rendezve
+- Fehér rész csak 2 cm körülveszi a lámpákat
+- Reszponzív, mobilbarát kialakítás
 
-Fix pozíció görgetéskor (background-attachment: fixed)
+### Lámpák
+- Kör alakúak (`border-radius: 50%`)
+- Szép hover és glow effekt, világítás ki/bekapcsolás
+- Reszponzív méretezés kisebb képernyőre
 
-Játéktér:
+### Fejléc és feladat
+- Cím nagyobb (`font-size: 3em`)
+- Feladat a fejlécben: *Kattints a lámpákra! A kiválasztott és a szomszédos lámpák átváltanak.*
 
-Teljesen középre rendezve
+### Újraindítás gomb
+- „♻️ Új játék” gomb a 9 lámpa alatt
+- Véletlenszerű új állapotot ad minden lámpának
 
-Fehér rész csak 2 cm körülveszi a lámpákat
+### Footer
+- A footer tartalmazza a nevet: **I. Bori**
 
-Reszponzív, mobilbarát kialakítás
+---
 
-Lámpák:
+## 📁 Projekt Fájl- és Mappastruktúra
 
-Kör alakúak (border-radius: 50%)
-
-Szép hover és glow effekt, világítás ki/bekapcsolás
-
-Reszponzív méretezés kisebb képernyőre
-
-Fejléc és feladat:
-
-Cím nagyobb (font-size: 3em)
-
-Feladat a fejlécben (Kattints a lámpákra! A kiválasztott és a szomszédos lámpák átváltanak.)
-
-Újraindítás gomb:
-
-„♻️ Új játék” gomb a 9 lámpa alatt
-
-Véletlenszerű új állapotot ad minden lámpának
-
-Footer:
-
-A footer tartalmazza a nevet: I. Bori
-
-📁 Projekt Fájl- és Mappastruktúra
+```plaintext
 project-root/
 ├── main.js                  # Az alkalmazás belépési pontja, inicializálja a játékot
 ├── index.html               # HTML struktúra
