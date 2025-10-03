@@ -82,22 +82,24 @@ Ez a projekt egy egyszerű **"Light-On" logikai játék**, amely JavaScript nyel
 - `nyertE()`
 
 ---
+## 📁 Projekt Struktúra
 
-## 🗂️ Fájlstruktúra
+```plaintext
 📁 project-root/
 │
-├── index.html # Az alkalmazás belépési pontja
-├── main.js # Az alkalmazás inicializálása innen indul
-├── stilus.css # Stíluslap
+├── index.html              # Az alkalmazás belépési pontja
+├── main.js                 # Az alkalmazás inicializálása innen indul
+├── stilus.css              # Alkalmazás stíluslapja (CSS)
 │
-├── models/
-│ ├── LampaModell.js
-│ └── LampakModell.js
+├── models/                 # Az adatmodell réteg (Model - M az MVC-ből)
+│   ├── LampaModell.js      # Egyetlen lámpa modellje
+│   └── LampakModell.js     # A lámpák listájának modellje
 │
-├── views/
-│ ├── LampaView.js
-│ ├── LampakView.js
-│ └── JatekterView.js
+├── views/                  # A felhasználói felület (View - V az MVC-ből)
+│   ├── LampaView.js        # Egy lámpa megjelenítése
+│   ├── LampakView.js       # Lámpák megjelenítése
+│   └── JatekterView.js     # Teljes játéktér megjelenítése
 │
-└── controllers/
-└── JatekterController.js
+└── controllers/            # Az irányító réteg (Controller - C az MVC-ből)
+    └── JatekterController.js  # A játék logikáját kezelő vezérlő
+
